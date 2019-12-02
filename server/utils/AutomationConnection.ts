@@ -4,7 +4,7 @@ import osc from 'osc'; //Using OSC fork from PieceMeta/osc.js as it has excluded
 
 //Utils:
 import { IAutomationProtocol, AutomationPresets } from '../constants/AutomationPresets';
-import { IFader } from '../reducers/fadersReducer';
+import { IFader } from '../../src/reducers/fadersReducer';
 import { 
     SET_FADER_LEVEL, 
     SET_CHANNEL_LABEL,
@@ -18,7 +18,7 @@ import {
     FADE_TO_BLACK,
     CLEAR_PST,
     SNAP_RECALL
-} from '../reducers/faderActions'
+} from '../../src/reducers/faderActions'
 
 
 const AUTOMATION_OSC_PORT = 5255;

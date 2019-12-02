@@ -7,7 +7,7 @@ const url = require('url')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow: Electron.BrowserWindow
+let mainWindow
 
 // Keep a reference for dev mode
 let dev = false
@@ -24,7 +24,7 @@ if (process.platform === 'win32') {
 }
 
 function createWindow() {
-  let windowOptions: any = { // type is Electron.BrowserWindowConstructorOptions but preLoad is missing
+  let windowOptions = { // type is Electron.BrowserWindowConstructorOptions but preLoad is missing
     width: 1024,
     height: 955,
     fullscreen: true,
@@ -33,7 +33,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true
     },
-    preload: path.resolve(path.join(__dirname, 'preload.js'))
+//    preload: path.resolve(path.join(__dirname, 'preload.js'))
   }
   // Create the browser window.
   mainWindow = new BrowserWindow(windowOptions)
@@ -94,6 +94,7 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
+  console.log("WINDOW CREATED")
   if (mainWindow === null) {
     createWindow()
   }

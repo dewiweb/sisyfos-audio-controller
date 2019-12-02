@@ -5,7 +5,7 @@ import {
     SET_FADER_LEVEL, 
     TOGGLE_PGM,
     TOGGLE_PFL
-} from  '../reducers/faderActions'
+} from  '../../src/reducers/faderActions'
 
 //Utils:
 import { IRemoteProtocol,

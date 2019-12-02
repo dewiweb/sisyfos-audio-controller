@@ -1,8 +1,8 @@
 import electron, { remote } from 'electron'
 const fs = remote.require('fs');
 const folder = electron.remote.app.getPath('userData');
-import { SET_COMPLETE_CH_STATE } from '../reducers/channelActions'
-import { SET_COMPLETE_FADER_STATE } from  '../reducers/faderActions'
+import { SET_COMPLETE_CH_STATE } from '../../src/reducers/channelActions'
+import { SET_COMPLETE_FADER_STATE } from  '../../src/reducers/faderActions'
 
 
 export const loadSettings = (storeRedux: any) => {

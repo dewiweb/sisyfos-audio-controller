@@ -5,7 +5,10 @@ const BabiliPlugin = require('babili-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // Any directories you will be adding code/files into, need to be added to this array so webpack will pick them up
-const defaultInclude = path.resolve(__dirname, 'src')
+const defaultInclude = [ 
+  path.resolve(__dirname, 'src'),
+  path.resolve(__dirname, 'server')
+]
 
 module.exports = {
   module: {
