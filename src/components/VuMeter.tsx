@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 //assets:
 import '../assets/css/VuMeter.css';
 //Utils:
-import { MixerProtocolPresets } from '../constants/MixerProtocolPresets';
-import { IMixerProtocol, IMixerProtocolGeneric } from '../constants/MixerProtocolInterface';
+import { MixerProtocolPresets } from '../../server/constants/MixerProtocolPresets';
+import { IMixerProtocol, IMixerProtocolGeneric } from '../../server/constants/MixerProtocolInterface';
 import { any } from 'prop-types';
 
 export interface IVuMeterInjectedProps {

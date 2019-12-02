@@ -1,17 +1,18 @@
 import React, { ChangeEvent } from 'react';
+import { remote } from 'electron'
+
 //@ts-ignore
 import * as ClassNames from 'classnames';
 
 import '../assets/css/ChannelMonitorOptions.css';
-import { MixerProtocolPresets } from '../constants/MixerProtocolPresets';
-import { IMixerProtocolGeneric } from '../constants/MixerProtocolInterface';
+import { MixerProtocolPresets } from '../../server/constants/MixerProtocolPresets';
+import { IMixerProtocolGeneric } from '../../server/constants/MixerProtocolInterface';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { SET_AUX_LEVEL } from '../reducers/channelActions'
 import { TOGGLE_SHOW_MONITOR_OPTIONS } from '../reducers/settingsActions'
 import { SET_FADER_MONITOR } from '../reducers/faderActions';
 import { ISettings } from '../reducers/settingsReducer';
-const { dialog } = require('electron').remote;
 
 interface IMonitorSettingsInjectProps {
     label: string,
@@ -46,7 +47,7 @@ class ChannelMonitorOptions extends React.PureComponent<IChannelProps & IMonitor
                 title: 'Remove monitoring',
                 message: 'Remove monitoring on ' + String(channel + 1),
             };
-            let response = dialog.showMessageBoxSync(options)
+            let response = remote.dialog.showMessageBoxSync(options)
             if (response === 1) {
                 return true
             }
@@ -60,7 +61,7 @@ class ChannelMonitorOptions extends React.PureComponent<IChannelProps & IMonitor
                 title: 'Monitor Channel',
                 message: 'Enable monitoring of Channel ' + String(channel + 1) + '?',
             };
-            let response = dialog.showMessageBoxSync(options)
+            let response = remote.dialog.showMessageBoxSync(options)
 
             if (response === 1) {
                 return true
@@ -84,7 +85,7 @@ class ChannelMonitorOptions extends React.PureComponent<IChannelProps & IMonitor
             message: 'WARNING!!!!!',
             detail: 'This will remove all monitor assignments to Aux :' + String(this.props.fader[this.faderIndex].monitor),
         };
-        let response = dialog.showMessageBoxSync(options)
+        let response = remote.dialog.showMessageBoxSync(options)
         if (response === 0) {
             this.props.channel.forEach((channel: any, index: number) => {
                 this.props.dispatch({
@@ -106,7 +107,7 @@ class ChannelMonitorOptions extends React.PureComponent<IChannelProps & IMonitor
             title: 'WARNING',
             message: 'Send all channels to Aux: ' + String(this.props.fader[this.faderIndex].monitor)
         };
-        let response = dialog.showMessageBoxSync(options)
+        let response = remote.dialog.showMessageBoxSync(options)
         if (response === 0) {
             this.props.channel.forEach((channel: any, index: number) => {
                 this.props.dispatch({

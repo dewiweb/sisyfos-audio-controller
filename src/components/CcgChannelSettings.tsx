@@ -1,8 +1,8 @@
 import React from 'react';
 
 import '../assets/css/CcgChannelSettings.css';
-import { MixerProtocolPresets } from '../constants/MixerProtocolPresets';
-import { IMixerProtocolGeneric, ICasparCGMixerGeometry } from '../constants/MixerProtocolInterface';
+import { MixerProtocolPresets } from '../../server/constants/MixerProtocolPresets';
+import { IMixerProtocolGeneric, ICasparCGMixerGeometry } from '../../server/constants/MixerProtocolInterface';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { IStore } from '../reducers/indexReducer';

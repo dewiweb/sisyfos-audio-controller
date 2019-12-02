@@ -3,14 +3,14 @@ import * as net from 'net'
 
 //Utils:
 import { IMixerProtocol } from '../constants/MixerProtocolInterface'
-import { IStore } from '../reducers/indexReducer'
-import { SET_OUTPUT_LEVEL } from '../reducers/channelActions'
+import { IStore } from '../../src/reducers/indexReducer'
+import { SET_OUTPUT_LEVEL } from '../../src/reducers/channelActions'
 import { 
     SET_FADER_LEVEL,
     TOGGLE_PGM,
     SET_MUTE
- } from  '../reducers/faderActions'
-import { SET_MIXER_ONLINE } from '../reducers/settingsActions';
+ } from  '../../src/reducers/faderActions'
+import { SET_MIXER_ONLINE } from '../../src/reducers/settingsActions';
 
 
 export class SSLMixerConnection {

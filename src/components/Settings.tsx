@@ -7,9 +7,9 @@ import { IAppProps } from './App';
 
 
 //Utils:
-import { saveSettings } from '../utils/SettingsStorage';
+import { saveSettings } from '../../server/utils/SettingsStorage';
 import '../assets/css/Settings.css';
-import { MixerProtocolPresets, MixerProtocolList } from '../constants/MixerProtocolPresets';
+import { MixerProtocolPresets, MixerProtocolList } from '../../server/constants/MixerProtocolPresets';
 import { any } from 'prop-types';
 import { ISettings } from '../reducers/settingsReducer';
 import { SHOW_CHANNEL } from '../reducers/faderActions'

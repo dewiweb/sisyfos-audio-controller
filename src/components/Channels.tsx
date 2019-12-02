@@ -23,7 +23,7 @@ import ChannelMonitorOptions from './ChannelMonitorOptions';
 import { IChannels } from '../reducers/channelsReducer';
 import { IFader } from '../reducers/fadersReducer';
 import { ISettings } from '../reducers/settingsReducer';
-const { dialog } = require('electron').remote;
+import { remote } from 'electron'
 
 interface IChannelsInjectProps {
     channels: IChannels 
@@ -103,7 +103,7 @@ class Channels extends React.Component<IChannelsInjectProps & Store> {
             title: 'Save Current Setup',
             message: 'Stores the current state of Sisyfos - including Fader-Channel Routing',
         };
-        let response = dialog.showSaveDialogSync(options)
+        let response = remote.dialog.showSaveDialogSync(options)
         if (response === 'save') {
             console.log('SAVING CURRENT STATE')
         }
@@ -115,7 +115,7 @@ class Channels extends React.Component<IChannelsInjectProps & Store> {
             title: 'Load selected file',
             message: 'Loading Fader and Channels state',
         };
-        let response = dialog.showOpenDialogSync(options)
+        let response = remote.dialog.showOpenDialogSync(options)
         console.log('LOAD STATE? :', response)
     }
 

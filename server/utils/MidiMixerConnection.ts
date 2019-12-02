@@ -5,13 +5,13 @@ import WebMidi, { INoteParam, IMidiChannel } from 'webmidi';
 //Utils:
 import { MixerProtocolPresets } from '../constants/MixerProtocolPresets';
 import { IMixerProtocol } from '../constants/MixerProtocolInterface';
-import { SET_OUTPUT_LEVEL } from '../reducers/channelActions'
+import { SET_OUTPUT_LEVEL } from '../../src/reducers/channelActions'
 import { 
     SET_VU_LEVEL, 
     SET_FADER_LEVEL, 
     SET_CHANNEL_LABEL,
     TOGGLE_PGM
-} from '../reducers/faderActions'
+} from '../../src/reducers/faderActions'
 
 
 export class MidiMixerConnection {

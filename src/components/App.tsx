@@ -10,28 +10,29 @@ import Settings from './Settings';
 import Storage from './RoutingStorage'
 
 //Utils:
-import { loadSnapshotState, saveSnapshotState } from '../utils/SettingsStorage';
-import { MixerGenericConnection } from '../utils/MixerConnection';
-import { AutomationConnection } from '../utils/AutomationConnection';
-import { HuiMidiRemoteConnection } from '../utils/HuiMidiRemoteConnection';
-import { MixerProtocolPresets } from '../constants/MixerProtocolPresets';
+import { loadSnapshotState, saveSnapshotState } from '../../server/utils/SettingsStorage';
+import { MixerGenericConnection } from '../../server/utils/MixerConnection';
+import { AutomationConnection } from '../../server/utils/AutomationConnection';
+import { HuiMidiRemoteConnection } from '../../server/utils/HuiMidiRemoteConnection';
+import { MixerProtocolPresets } from '../../server/constants/MixerProtocolPresets';
+import { Store } from 'redux';
 
 export interface IAppProps {
     store: IStore
 }
 
-class App extends React.Component<IAppProps> {
+class App extends React.Component<IAppProps & Store> {
     numberOfChannels: number[] = []
     settingsPath: string = ''
 
-    constructor(props: IAppProps) {
+    constructor(props: any) {
         super(props)
         this.saveSnapshotSettings = this.saveSnapshotSettings.bind(this)
         this.loadSnapshotSettings = this.loadSnapshotSettings.bind(this)
     }
 
     componentWillMount() {
-        (window as any).mixerGenericConnection = new MixerGenericConnection();
+        (window as any).mixerGenericConnection = new MixerGenericConnection(window.storeRedux);
         (window as any).automationConnection = new AutomationConnection();
         if (this.props.store.settings[0].enableRemoteFader){
             (window as any).huiRemoteConnection = new HuiMidiRemoteConnection();

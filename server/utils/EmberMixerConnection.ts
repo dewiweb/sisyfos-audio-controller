@@ -2,12 +2,12 @@ import { DeviceTree, QualifiedParameter } from 'emberplus';
 
 //Utils:
 import { IMixerProtocol } from '../constants/MixerProtocolInterface';
-import { IStore } from '../reducers/indexReducer';
+import { IStore } from '../../src/reducers/indexReducer';
 import { 
     SET_VU_LEVEL, 
     SET_FADER_LEVEL, 
     SET_CHANNEL_LABEL 
-} from '../reducers/faderActions'
+} from '../../src/reducers/faderActions'
 
 
 export class EmberMixerConnection {

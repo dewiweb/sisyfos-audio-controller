@@ -1,5 +1,5 @@
 import * as DEFAULTS from '../../constants/DEFAULTS';
-import { SET_VU_LEVEL } from '../../reducers/faderActions'
+import { SET_VU_LEVEL } from '../../../src/reducers/faderActions'
 
 
 export const behringerMeter = (message: any) => {

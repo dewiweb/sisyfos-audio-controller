@@ -1,6 +1,5 @@
-
-const fs = require('fs');
-const electron = require('electron');
+import electron, { remote } from 'electron'
+const fs = remote.require('fs');
 const folder = electron.remote.app.getPath('userData');
 import { SET_COMPLETE_CH_STATE } from '../reducers/channelActions'
 import { SET_COMPLETE_FADER_STATE } from  '../reducers/faderActions'

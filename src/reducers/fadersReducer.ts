@@ -1,4 +1,4 @@
-import * as DEFAULTS from '../constants/DEFAULTS';
+import * as DEFAULTS from '../../server/constants/DEFAULTS';
 import {
     CLEAR_PST,
     FADE_TO_BLACK,

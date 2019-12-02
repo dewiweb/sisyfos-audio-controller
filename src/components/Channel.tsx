@@ -9,8 +9,8 @@ import ReactSlider from 'react-slider'
 
 //assets:
 import '../assets/css/Channel.css';
-import { MixerProtocolPresets} from '../constants/MixerProtocolPresets';
-import { IMixerProtocolGeneric } from '../constants/MixerProtocolInterface';
+import { MixerProtocolPresets} from '../../server/constants/MixerProtocolPresets';
+import { IMixerProtocolGeneric } from '../../server/constants/MixerProtocolInterface';
 import { 
     SET_FADER_LEVEL, 
     TOGGLE_PGM,

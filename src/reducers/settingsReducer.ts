@@ -1,5 +1,5 @@
-import * as DEFAULTS from '../constants/DEFAULTS';
-import { MixerProtocolPresets } from '../constants/MixerProtocolPresets';
+import * as DEFAULTS from '../../server/constants/DEFAULTS';
+import { MixerProtocolPresets } from '../../server/constants/MixerProtocolPresets';
 import { 
     TOGGLE_SHOW_CHAN_STRIP,
     TOGGLE_SHOW_OPTION,

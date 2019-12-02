@@ -4,14 +4,14 @@ import * as net from 'net'
 
 //Utils:
 import { IMixerProtocol } from '../constants/MixerProtocolInterface'
-import { IStore } from '../reducers/indexReducer'
-import { SET_OUTPUT_LEVEL } from '../reducers/channelActions'
+import { IStore } from '../../src/reducers/indexReducer'
+import { SET_OUTPUT_LEVEL } from '../../src/reducers/channelActions'
 import { 
     SET_VU_LEVEL, 
     SET_FADER_LEVEL,
     SET_CHANNEL_LABEL,
     TOGGLE_PGM
-} from '../reducers/faderActions'
+} from '../../src/reducers/faderActions'
 
 
 

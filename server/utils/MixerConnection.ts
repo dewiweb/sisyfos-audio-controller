@@ -1,15 +1,16 @@
 //Utils:
 import { MixerProtocolPresets } from '../constants/MixerProtocolPresets';
 import { IMixerProtocol, IMixerProtocolGeneric, ICasparCGMixerGeometry } from '../constants/MixerProtocolInterface';
-import { OscMixerConnection } from '../utils/OscMixerConnection';
-import { MidiMixerConnection } from '../utils/MidiMixerConnection';
+import { OscMixerConnection } from './OscMixerConnection';
+import { MidiMixerConnection } from './MidiMixerConnection';
 import { QlClMixerConnection } from './QlClMixerConnection';
 import { SSLMixerConnection } from './SSLMixerConnection';
 import { EmberMixerConnection } from './EmberMixerConnection';
 import { CasparCGConnection } from './CasparCGConnection';
-import { IChannel } from '../reducers/channelsReducer';
-import { SET_OUTPUT_LEVEL, FADE_ACTIVE } from '../reducers/channelActions'
-import { SET_FADER_LEVEL } from  '../reducers/faderActions'
+import { IChannel } from '../../src/reducers/channelsReducer';
+import { SET_OUTPUT_LEVEL, FADE_ACTIVE } from '../../src/reducers/channelActions'
+import { SET_FADER_LEVEL } from  '../../src/reducers/faderActions'
+import { Store } from 'redux';
 
 
 // FADE_INOUT_SPEED defines the resolution of the fade in ms
@@ -24,7 +25,7 @@ export class MixerGenericConnection {
     timer: any;
     fadeActiveTimer: any;
 
-    constructor() {
+    constructor(store: Store) {
         this.updateOutLevels = this.updateOutLevels.bind(this);
         this.updateOutLevel = this.updateOutLevel.bind(this);
         this.fadeInOut = this.fadeInOut.bind(this);
@@ -32,9 +33,9 @@ export class MixerGenericConnection {
         this.fadeDown = this.fadeDown.bind(this);
 
         //Get redux store:
-        this.store = window.storeRedux.getState();
-        const unsubscribe = window.storeRedux.subscribe(() => {
-            this.store = window.storeRedux.getState();
+        this.store = store.getState();
+        const unsubscribe = store.subscribe(() => {
+            this.store = store.getState();
         });
 
         // Get mixer protocol

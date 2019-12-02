@@ -7,7 +7,7 @@ const url = require('url')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+let mainWindow: Electron.BrowserWindow
 
 // Keep a reference for dev mode
 let dev = false
@@ -24,8 +24,7 @@ if (process.platform === 'win32') {
 }
 
 function createWindow() {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
+  let windowOptions: any = { // type is Electron.BrowserWindowConstructorOptions but preLoad is missing
     width: 1024,
     height: 955,
     fullscreen: true,
@@ -33,8 +32,11 @@ function createWindow() {
     show: false,
     webPreferences: {
       nodeIntegration: true
-    }
-  })
+    },
+    preload: path.resolve(path.join(__dirname, 'preload.js'))
+  }
+  // Create the browser window.
+  mainWindow = new BrowserWindow(windowOptions)
 
   // and load the index.html of the app.
   let indexPath

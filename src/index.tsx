@@ -9,7 +9,7 @@ import indexReducer from './reducers/indexReducer';
 import { UPDATE_SETTINGS } from './reducers/settingsActions'
 
 //Utils:
-import { loadSettings } from './utils/SettingsStorage';
+import { loadSettings } from '../server/utils/SettingsStorage';
 
 declare global {
     interface Window {

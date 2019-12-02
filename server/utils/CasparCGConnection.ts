@@ -6,10 +6,10 @@ import * as osc from 'osc';
 //Utils:
 import { MixerProtocolPresets } from '../constants/MixerProtocolPresets';
 import { IMixerProtocol, ICasparCGMixerGeometry, ICasparCGChannelLayerPair } from '../constants/MixerProtocolInterface';
-import { IStore } from '../reducers/indexReducer';
-import { IChannel } from '../reducers/channelsReducer';
-import { SET_PRIVATE } from  '../reducers/channelActions'
-import { SET_VU_LEVEL, SET_CHANNEL_LABEL } from '../reducers/faderActions'
+import { IStore } from '../../src/reducers/indexReducer';
+import { IChannel } from '../../src/reducers/channelsReducer';
+import { SET_PRIVATE } from  '../../src/reducers/channelActions'
+import { SET_VU_LEVEL, SET_CHANNEL_LABEL } from '../../src/reducers/faderActions'
 
 interface CommandChannelMap {
     [key: string]: number

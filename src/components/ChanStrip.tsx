@@ -2,8 +2,8 @@ import React, { ChangeEvent } from 'react';
 import ReactSlider from 'react-slider'
 
 import '../assets/css/ChanStrip.css';
-import { MixerProtocolPresets } from '../constants/MixerProtocolPresets';
-import { IMixerProtocolGeneric } from '../constants/MixerProtocolInterface';
+import { MixerProtocolPresets } from '../../server/constants/MixerProtocolPresets';
+import { IMixerProtocolGeneric } from '../../server/constants/MixerProtocolInterface';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { 

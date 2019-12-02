@@ -1,5 +1,5 @@
 import * as DEFAULTS from '../../constants/DEFAULTS';
-import { SET_ALL_VU_LEVELS } from  '../../reducers/faderActions'
+import { SET_ALL_VU_LEVELS } from  '../../../src/reducers/faderActions'
 
 export const midasMeter = (message: any) => {
     const store = window.storeRedux.getState();
